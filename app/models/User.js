@@ -25,9 +25,9 @@ const userSchema = new Schema({
         enum: userRole,
         required: true
     },
-    hireDate: {
+    joinDate: {
         type: Date,
-        default: null,
+        default: new Date(),
         required: false
     },
     semester:{

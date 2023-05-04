@@ -2,13 +2,13 @@ import userModel from "../models/User.js";
 import jwt from 'jsonwebtoken'
 
 export const registerUser = async (req, res, next) => {
-  let { name, email, password,role, hireDate, semester } = req.body
+  let { name, email, password,role, joinDate, semester } = req.body
   try {
     let user = await userModel.findOne({ email })
     if (user) {
       return res.status(400).json({ errors: [{ msg: 'User already exists' }] })
     }
-    user = await userModel.create({ name, email, password, role, hireDate, semester});
+    user = await userModel.create({ name, email, password, role, joinDate, semester});
     user = user.toObject();
     delete user.password;
     return res.status(200).json(user)

@@ -8,7 +8,7 @@ import _initializePassport from './config/passport.js';
 
 import connectDB from './config/db.js';
 import errorHandler from './middleware/errorHandler.js';
-import authRouter from './routes/auth.js';
+import router from './routes.js';
 
 connectDB();
 
@@ -18,15 +18,7 @@ app.use(cors('*'))
 app.use(morgan('tiny'));
 app.use(express.json({ extended: false }))
 
-app.use('/auth', authRouter);
-
-app.get('/', (req, res, next) => {
-  try {
-    res.json('api running')
-  } catch (error) {
-    next(error)
-  }
-})
+app.use('/',router)
 
 app.use(errorHandler);
 
