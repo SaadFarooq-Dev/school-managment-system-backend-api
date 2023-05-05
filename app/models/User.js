@@ -1,5 +1,5 @@
+import bcrypt from 'bcrypt';
 import mongoose from "mongoose";
-import bcrypt from 'bcrypt'
 import { userRole } from "../constants/enum.js";
 const { Schema } = mongoose;
 

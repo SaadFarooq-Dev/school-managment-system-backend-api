@@ -1,5 +1,5 @@
+import jwt from 'jsonwebtoken';
 import userModel from "../models/User.js";
-import jwt from 'jsonwebtoken'
 
 export const registerUser = async (req, res, next) => {
   let { name, email, password,role, joinDate, semester } = req.body
@@ -23,7 +23,7 @@ export const loginUser = async (req, res, next)=>{
     jwt.sign(
       req.user,
       process.env.JWTSECRET,
-      { expiresIn: 3600 },
+      { expiresIn: 36000 },
       async (err, token) => {
        if (err) throw err;
        res.json({ token });
