@@ -13,7 +13,6 @@ export const createClass = async (req, res,next)=>{
 
 export const getAllClasses = async (req, res, next)=>{
   try {
-    // const filter = req.body ? parser(JSON.stringify(req.body)) : null
     const sort = req.query.sort ? handleQuerySort(req.query.sort) : {createdAt: -1}
 
     const classobj = await classModel.find(req.body).sort(sort);
