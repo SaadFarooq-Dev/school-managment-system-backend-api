@@ -1,4 +1,3 @@
-import parser from "mongodb-query-parser";
 import { classModel } from "../models/Class.js";
 import { handleQuerySort } from "../utils/handleQuerySort.js";
 
@@ -14,11 +13,10 @@ export const createClass = async (req, res,next)=>{
 
 export const getAllClasses = async (req, res, next)=>{
   try {
-
-    const filter = req.body ? parser(JSON.stringify(req.body)) : null
+    // const filter = req.body ? parser(JSON.stringify(req.body)) : null
     const sort = req.query.sort ? handleQuerySort(req.query.sort) : {createdAt: -1}
 
-    const classobj = await classModel.find(filter).sort(sort);
+    const classobj = await classModel.find(req.body).sort(sort);
     return res.status(200).json(classobj);
   } catch (error) {
     next(error)
