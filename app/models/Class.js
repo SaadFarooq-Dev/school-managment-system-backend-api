@@ -6,16 +6,16 @@ const classSchema = new Schema({
     type: String,
     max: 255,
     required: true,
+    unique: true
   },
   classTeacherId: {
     type: Schema.Types.ObjectId, ref: 'User',
     required: true,
     unique: true,
   },
-  courses: {
-    type: Array,
-    required: true,
-  }
+  courses: [{
+    type: Schema.Types.ObjectId, ref: 'Course', required: true
+  }]
 }, { timestamps: true })
 
 classSchema.pre('save', async function (next) {

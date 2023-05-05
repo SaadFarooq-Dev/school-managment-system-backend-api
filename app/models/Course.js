@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 
-
 const courseSchema = new Schema({
   name: {
     type: String,
