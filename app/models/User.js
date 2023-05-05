@@ -4,18 +4,18 @@ import { userRole } from "../constants/enum.js";
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    name:{
+    name: {
         type: String,
         max: 255,
         required: true,
     },
-    email:{
+    email: {
         type: String,
         max: 255,
         unique: true,
         required: true,
     },
-    password:{
+    password: {
         type: String,
         max: 255,
         required: true,
@@ -30,16 +30,16 @@ const userSchema = new Schema({
         default: new Date(),
         required: false
     },
-    semester:{
+    semester: {
         type: Number,
-        default:null,
+        default: null,
         required: false
     }
-},{
+}, {
     timestamps: true
 })
 
-userSchema.pre('save', async function(next) {
+userSchema.pre('save', async function (next) {
 
     const saltRound = 10;
     const password = this.password;
@@ -51,7 +51,7 @@ userSchema.pre('save', async function(next) {
     next();
 })
 
-userSchema.methods.isValidPassword = async function(password){
+userSchema.methods.isValidPassword = async function (password) {
     const user = this;
     const isPasswordValid = await bcrypt.compare(password, user.password);
     console.log("instance method isValidPassword ran: " + isPasswordValid);

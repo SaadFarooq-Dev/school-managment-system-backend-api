@@ -9,10 +9,10 @@ export default new JWTstrategy(
         jwtFromRequest: ExtractJwt.fromHeader('x-auth-token'),
     },
     async (token, done) => {
-        try{
+        try {
             return done(null, token)
         }
-        catch(err){
+        catch (err) {
             done(err);
         }
     }

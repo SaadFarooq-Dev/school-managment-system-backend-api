@@ -6,7 +6,7 @@ const courseSchema = new Schema({
     required: true,
     unique: true
   }
-},{timestamps: true})
+}, { timestamps: true })
 
 const courseModel = model('Course', courseSchema);
 

@@ -18,7 +18,7 @@ app.use(cors('*'))
 app.use(morgan('tiny'));
 app.use(express.json({ extended: false }))
 
-app.use('/',router)
+app.use('/', router)
 
 app.use(errorHandler);
 

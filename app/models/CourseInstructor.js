@@ -11,7 +11,7 @@ const courseInstructorSchema = new Schema({
     ref: 'User',
     required: true
   }
-},{timestamps: true})
+}, { timestamps: true })
 
 const courseInstructorModel = model('CourseInstructor', courseInstructorSchema);
 

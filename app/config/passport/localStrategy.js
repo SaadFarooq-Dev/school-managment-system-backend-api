@@ -19,7 +19,7 @@ export const localStrategyLogin = new localStrategy(
         return done(null, false, { message: "password didn't match" });
       } else {
         console.log('login sucessfull');
-        return done(null, {id: user.id, name: user.name, email: user.email}, { message: 'logged in successfully' });
+        return done(null, { id: user.id, name: user.name, email: user.email }, { message: 'logged in successfully' });
       }
 
     } catch (error) {
