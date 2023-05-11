@@ -28,7 +28,7 @@ export const getClass = async (req, res, next) => {
     if (classobj) {
       return res.status(200).json(classobj);
     }
-    return res.status(400).json({ errors: [{ msg: 'No such document exists for the given Id' }] })
+    return res.status(400).json({ errors: [{ message: 'No such document exists for the given Id' }] })
   } catch (error) {
     next(error)
   }
@@ -39,7 +39,7 @@ export const patchClass = async (req, res, next) => {
     if (classobj) {
       return res.status(200).json(classobj);
     }
-    return res.status(400).json({ errors: [{ msg: 'No such document exists for the given Id' }] })
+    return res.status(400).json({ errors: [{ message: 'No such document exists for the given Id' }] })
   } catch (error) {
     next(error)
   }
@@ -51,7 +51,7 @@ export const deleteClass = async (req, res, next) => {
     if (classobj.deletedCount) {
       return res.status(200).json(`class: ${req.params.id} deleted`);
     }
-    return res.status(400).json({ errors: [{ msg: 'No such document exists for the given Id' }] })
+    return res.status(400).json({ errors: [{ message: 'No such document exists for the given Id' }] })
   } catch (error) {
     next(error)
   }

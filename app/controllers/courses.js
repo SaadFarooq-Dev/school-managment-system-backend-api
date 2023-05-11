@@ -28,7 +28,7 @@ export const getCourse = async (req, res, next) => {
     if (course) {
       return res.status(200).json(course);
     }
-    return res.status(400).json({ errors: [{ msg: 'No such document exists for the given Id' }] })
+    return res.status(400).json({ errors: [{ message: 'No such document exists for the given Id' }] })
   } catch (error) {
     next(error)
   }
@@ -39,7 +39,7 @@ export const patchCourse = async (req, res, next) => {
     if (course) {
       return res.status(200).json(course);
     }
-    return res.status(400).json({ errors: [{ msg: 'No such document exists for the given Id' }] })
+    return res.status(400).json({ errors: [{ message: 'No such document exists for the given Id' }] })
   } catch (error) {
     next(error)
   }
@@ -51,7 +51,7 @@ export const deleteCourse = async (req, res, next) => {
     if (course.deletedCount) {
       return res.status(200).json(`Course: ${req.params.id} deleted`);
     }
-    return res.status(400).json({ errors: [{ msg: 'No such document exists for the given Id' }] })
+    return res.status(400).json({ errors: [{ message: 'No such document exists for the given Id' }] })
   } catch (error) {
     next(error)
   }
