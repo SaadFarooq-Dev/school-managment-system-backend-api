@@ -23,3 +23,12 @@ export const userSchema = {
     }
   }
 }
+
+export const getUserSchema = (bool)=> {
+  if (bool) {
+   return userSchema
+  }
+  delete userSchema.required
+  userSchema.additionalProperties = false
+  return {...userSchema}
+ }
