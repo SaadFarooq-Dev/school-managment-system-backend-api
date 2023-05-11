@@ -18,7 +18,6 @@ export const registerUser = async (req, res, next) => {
 };
 
 export const loginUser = async (req, res, next) => {
-
   try {
     jwt.sign(
       req.user,
