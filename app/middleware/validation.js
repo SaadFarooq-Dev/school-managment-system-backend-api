@@ -1,5 +1,7 @@
+import addFormats from "ajv-formats";
 import { Validator } from "express-json-validator-middleware";
 
-const { validate } = new Validator();
+const validator = new Validator();
+addFormats(validator.ajv)
 
-export default validate;
+export default validator.validate;
