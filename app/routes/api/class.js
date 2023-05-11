@@ -17,7 +17,7 @@ classRouter
   .route('/:id')
   .delete(deleteClass)
   .get(getClass)
-  .patch(validate({ body: getClassSchema(false) }),patchClass)
+  .patch(validate({ body: getClassSchema(false) }), patchClass)
 
 
 export default classRouter;

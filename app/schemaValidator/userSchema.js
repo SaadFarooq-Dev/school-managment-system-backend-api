@@ -24,11 +24,11 @@ export const userSchema = {
   }
 }
 
-export const getUserSchema = (bool)=> {
+export const getUserSchema = (bool) => {
   if (bool) {
-   return userSchema
+    return userSchema
   }
   delete userSchema.required
   userSchema.additionalProperties = false
-  return {...userSchema}
- }
+  return { ...userSchema }
+}

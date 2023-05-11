@@ -1,4 +1,4 @@
- const classSchema = {
+const classSchema = {
   type: "object",
   required: ['name', 'classTeacherId', 'courses'],
   properties: {
@@ -19,11 +19,11 @@
     }
   }
 }
-export const getClassSchema = (bool)=> {
- if (bool) {
-  return classSchema
- }
- delete classSchema.required
- classSchema.additionalProperties = false
- return {...classSchema}
+export const getClassSchema = (bool) => {
+  if (bool) {
+    return classSchema
+  }
+  delete classSchema.required
+  classSchema.additionalProperties = false
+  return { ...classSchema }
 }
