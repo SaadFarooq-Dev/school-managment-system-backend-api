@@ -1,13 +1,12 @@
 /* eslint-disable no-unused-vars */
-import express from 'express'
-import morgan from 'morgan'
-import cors from 'cors'
-
 import 'dotenv/config'
 
-import _initializePassport from './config/passport.js'
+import cors from 'cors'
+import express from 'express'
+import morgan from 'morgan'
 
 import connectDB from './config/db.js'
+import _initializePassport from './config/passport.js'
 import errorHandler from './middleware/errorHandler.js'
 import router from './routes.js'
 

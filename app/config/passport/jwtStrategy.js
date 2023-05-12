@@ -1,4 +1,5 @@
 import passportJWT from 'passport-jwt'
+
 import userModel from '../../models/User.js'
 
 const ExtractJwt = passportJWT.ExtractJwt

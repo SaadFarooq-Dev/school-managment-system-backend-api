@@ -1,4 +1,5 @@
 import passportLocal from 'passport-local'
+
 import userModel from '../../models/User.js'
 
 const LocalStrategy = passportLocal.Strategy
