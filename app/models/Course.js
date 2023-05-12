@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, Schema } from 'mongoose'
 
 const courseSchema = new Schema({
   name: {
@@ -8,6 +8,6 @@ const courseSchema = new Schema({
   }
 }, { timestamps: true })
 
-const courseModel = model('Course', courseSchema);
+const courseModel = model('Course', courseSchema)
 
-export default courseModel;
+export default courseModel

@@ -1,11 +1,11 @@
 export const courseSchema = {
-  type: "object",
+  type: 'object',
   required: ['name'],
   properties: {
     name: {
       type: 'string',
       minLength: 4,
-      maxLength: 64,
+      maxLength: 64
     }
   }
 }

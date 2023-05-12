@@ -1,11 +1,11 @@
 const classSchema = {
-  type: "object",
+  type: 'object',
   required: ['name', 'classTeacherId', 'courses'],
   properties: {
     name: {
       type: 'string',
       minLength: 2,
-      maxLength: 255,
+      maxLength: 255
     },
     classTeacherId: {
       type: 'string',

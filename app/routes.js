@@ -1,7 +1,7 @@
-import { Router } from 'express';
-import authRouter from './routes/api/auth.js';
-import classRouter from './routes/api/class.js';
-import courseRouter from './routes/api/course.js';
+import { Router } from 'express'
+import authRouter from './routes/api/auth.js'
+import classRouter from './routes/api/class.js'
+import courseRouter from './routes/api/course.js'
 
 const router = Router()
 

@@ -1,9 +1,9 @@
-import passport from "passport";
+import passport from 'passport'
 
-import { localStrategyLogin } from "./passport/localStrategy.js";
-import jwtStrategy from "./passport/jwtStrategy.js";
+import jwtStrategy from './passport/jwtStrategy.js'
+import { localStrategyLogin } from './passport/localStrategy.js'
 
-passport.use('login', localStrategyLogin);
-passport.use(jwtStrategy);
+passport.use('login', localStrategyLogin)
+passport.use(jwtStrategy)
 
 export default passport

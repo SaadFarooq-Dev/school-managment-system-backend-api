@@ -1,5 +1,5 @@
-import { roles } from "../constants/enum.js";
-import { HTTPStatusCode } from "../utils/errors/httpStatusCode.js";
+import { roles } from '../constants/enum.js'
+import { HTTPStatusCode } from '../utils/errors/httpStatusCode.js'
 
 export const isAdmin = (req, res, next) => {
   try {

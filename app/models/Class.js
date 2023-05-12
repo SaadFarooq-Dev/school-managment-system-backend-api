@@ -1,5 +1,6 @@
-import { model, Schema } from "mongoose";
-import userModel from "./User.js";
+import { model, Schema } from 'mongoose'
+
+import userModel from './User.js'
 
 const classSchema = new Schema({
   name: {
@@ -9,9 +10,10 @@ const classSchema = new Schema({
     unique: true
   },
   classTeacherId: {
-    type: Schema.Types.ObjectId, ref: 'User',
+    type: Schema.Types.ObjectId,
+    ref: 'User',
     required: true,
-    unique: true,
+    unique: true
   },
   courses: [{
     type: Schema.Types.ObjectId, ref: 'Course', required: true
@@ -24,12 +26,10 @@ classSchema.pre('save', async function (next) {
     if (user) {
       next()
     }
-    throw Error("Referenced UserId not found")
+    throw Error('Referenced UserId not found')
   } catch (error) {
     next(error)
   }
-
 })
 
-export const classModel = model('Class', classSchema);
-
+export const classModel = model('Class', classSchema)

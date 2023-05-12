@@ -1,10 +1,9 @@
-import { model, Schema } from "mongoose";
-
+import { model, Schema } from 'mongoose'
 
 const courseInstructorSchema = new Schema({
   subjectId: {
     type: String,
-    required: true,
+    required: true
   },
   userId: {
     type: Schema.Types.ObjectId,
@@ -13,6 +12,6 @@ const courseInstructorSchema = new Schema({
   }
 }, { timestamps: true })
 
-const courseInstructorModel = model('CourseInstructor', courseInstructorSchema);
+const courseInstructorModel = model('CourseInstructor', courseInstructorSchema)
 
-export default courseInstructorModel;
+export default courseInstructorModel

@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
+    "linit:fix": "./node_modules/.bin/eslint --fix './app/**'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -30,5 +31,13 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0"
   }
 }

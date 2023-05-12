@@ -1,10 +1,11 @@
-import express from 'express';
-import { createClass, deleteClass, getAllClasses, getClass, patchClass } from '../../controllers/class.js';
-import { authenticateJWT } from '../../middleware/jwtAuthenticate.js';
-import validate from '../../middleware/validation.js';
-import { getClassSchema } from '../../schemaValidator/classSchema.js';
+import express from 'express'
 
-const classRouter = express.Router();
+import { createClass, deleteClass, getAllClasses, getClass, patchClass } from '../../controllers/class.js'
+import { authenticateJWT } from '../../middleware/jwtAuthenticate.js'
+import validate from '../../middleware/validation.js'
+import { getClassSchema } from '../../schemaValidator/classSchema.js'
+
+const classRouter = express.Router()
 
 classRouter.use(authenticateJWT)
 
@@ -19,5 +20,4 @@ classRouter
   .get(getClass)
   .patch(validate({ body: getClassSchema(false) }), patchClass)
 
-
-export default classRouter;
+export default classRouter

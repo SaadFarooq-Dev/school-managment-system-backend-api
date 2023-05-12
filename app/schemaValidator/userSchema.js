@@ -1,7 +1,7 @@
-import { userRole } from "../constants/enum.js";
+import { userRole } from '../constants/enum.js'
 
 export const userSchema = {
-  type: "object",
+  type: 'object',
   required: ['name', 'email', 'password', 'role'],
   properties: {
     name: {
@@ -19,7 +19,7 @@ export const userSchema = {
     },
     role: {
       type: 'string',
-      enum: userRole,
+      enum: userRole
     }
   }
 }
