@@ -1,6 +1,7 @@
 import express from 'express'
 
 import { createCourse, deleteCourse, getAllCourses, getCourse, patchCourse } from '../../controllers/courses.js'
+import { isAdmin } from '../../helpers/hepler.js'
 import { authenticateJWT } from '../../middleware/jwtAuthenticate.js'
 import validate from '../../middleware/validation.js'
 import { courseSchema } from '../../schemaValidator/courseSchema.js'
@@ -11,13 +12,13 @@ courseRouter.use(authenticateJWT)
 
 courseRouter
   .route('/')
-  .post(validate({ body: courseSchema }), createCourse)
+  .post(isAdmin, validate({ body: courseSchema }), createCourse)
   .get(getAllCourses)
 
 courseRouter
   .route('/:id')
-  .delete(deleteCourse)
+  .delete(isAdmin, deleteCourse)
   .get(getCourse)
-  .patch(validate({ body: courseSchema }), patchCourse)
+  .patch(isAdmin, validate({ body: courseSchema }), patchCourse)
 
 export default courseRouter

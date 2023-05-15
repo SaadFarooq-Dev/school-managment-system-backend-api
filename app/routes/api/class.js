@@ -1,6 +1,7 @@
 import express from 'express'
 
 import { createClass, deleteClass, getAllClasses, getClass, patchClass } from '../../controllers/class.js'
+import { isAdmin } from '../../helpers/hepler.js'
 import { authenticateJWT } from '../../middleware/jwtAuthenticate.js'
 import validate from '../../middleware/validation.js'
 import { getClassSchema } from '../../schemaValidator/classSchema.js'
@@ -11,13 +12,13 @@ classRouter.use(authenticateJWT)
 
 classRouter
   .route('/')
-  .post(validate({ body: getClassSchema(true) }), createClass)
+  .post(isAdmin, validate({ body: getClassSchema(true) }), createClass)
   .get(getAllClasses)
 
 classRouter
   .route('/:id')
-  .delete(deleteClass)
+  .delete(isAdmin, deleteClass)
   .get(getClass)
-  .patch(validate({ body: getClassSchema(false) }), patchClass)
+  .patch(isAdmin, validate({ body: getClassSchema(false) }), patchClass)
 
 export default classRouter
