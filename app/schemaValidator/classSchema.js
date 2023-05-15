@@ -1,6 +1,6 @@
 const classSchema = {
   type: 'object',
-  required: ['name', 'classTeacherId', 'courses'],
+  required: ['name', 'classTeacherId', 'coursesInstructors'],
   properties: {
     name: {
       type: 'string',
@@ -11,7 +11,7 @@ const classSchema = {
       type: 'string',
       minLength: 5
     },
-    courses: {
+    coursesInstructors: {
       type: 'array',
       items: { type: 'string' },
       uniqueItems: true,

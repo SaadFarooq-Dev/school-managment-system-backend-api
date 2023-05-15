@@ -15,8 +15,8 @@ const classSchema = new Schema({
     required: true,
     unique: true
   },
-  courses: [{
-    type: Schema.Types.ObjectId, ref: 'Course', required: true
+  coursesInstructors: [{
+    type: Schema.Types.ObjectId, ref: 'CourseInstructor', required: true
   }]
 }, { timestamps: true })
 
